@@ -14,17 +14,17 @@ class User {
 		string $m = "", 
 		string $p = "") {
 			$this->id = $i;
-			$this->name = $t;
-			$this->mail = $pa;
-			$this->password = $c;
+			$this->name = $n;
+			$this->mail = $m;
+			$this->password = $p;
 	}
 
 	public function getId() : int { return $this->id; }
 	public function setId($i) : void { $this->id = $i; }
-	public function getTitle() : int { return $this->title; }
-	public function setTitle($t) : void { $this->title = $t; }
-	public function getPostedAt() : int { return $this->posted_at; }
-	public function setPostedAt($pa) : void { $this->posted_at = $pa; }
+	public function getName() : int { return $this->name; }
+	public function setName($n) : void { $this->name = $n; }
+	public function getMail() : int { return $this->mail; }
+	public function setMail($m) : void { $this->mail = $m; }
 	public function getPassword() : int { return $this->password; }
 	public function setPassword($p) : void { $this->password = $p; }
 
