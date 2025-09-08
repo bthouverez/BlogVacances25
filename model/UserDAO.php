@@ -41,9 +41,32 @@ class UserDAO {
 		return $ret;
 	}
 
-	public function getById($i) : User {
+	public function getById(int $i) : User {
+		$sql = 'SELECT * FROM Users WHERE id = ?';
+		$res = $this->bdd->prepare($sql);
+		$res->execute([$i]);
 
+		$tab = $res->fetch();
+		if($tab) {
+			$user = new User();
+			$user->setId($tab['id']);
+			$user->setName($tab['name']);
+			$user->setMail($tab['mail']);
+			$user->setPassword($tab['password']);
+		}
+		return $user;
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 	public function add(User $u) : int {
 
