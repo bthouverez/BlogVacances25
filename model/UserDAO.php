@@ -46,9 +46,9 @@ class UserDAO {
 		$res = $this->bdd->prepare($sql);
 		$res->execute([$i]);
 
+		$user = new User();
 		$tab = $res->fetch();
 		if($tab) {
-			$user = new User();
 			$user->setId($tab['id']);
 			$user->setName($tab['name']);
 			$user->setMail($tab['mail']);
@@ -57,16 +57,21 @@ class UserDAO {
 		return $user;
 	}
 
+	public function checkUser($login, $password) : string|int {
+		$sql = 'SELECT * FROM Users WHERE mail = ?';
+		$res = $this->bdd->prepare($sql);
+		$res->execute([$login]);
 
 
+		$tab = $res->fetch();
+		if($tab) {
+			// if($password == $tab['password']) {
+			if(password_verify($password, $tab['password'])) {
+				return $tab['id'];
+			} else return 'Mot de passe incorrect';
+		} else return 'Cet email n\'est pas enregistré';
 
-
-
-
-
-
-
-
+	} 
 
 	public function add(User $u) : int {
 

@@ -30,15 +30,15 @@ class Post {
 
 	public function getId() : int { return $this->id; }
 	public function setId($i) : void { $this->id = $i; }
-	public function getTitle() : int { return $this->title; }
+	public function getTitle() : string { return $this->title; }
 	public function setTitle($t) : void { $this->title = $t; }
 	public function getPostedAt() : DateTime { return $this->posted_at; }
 	public function setPostedAt($pa) : void { $this->posted_at = $pa; }
-	public function getContent() : int { return $this->content; }
+	public function getContent() : string { return $this->content; }
 	public function setContent($c) : void { $this->content = $c; }
-	public function getPicture() : int { return $this->picture; }
+	public function getPicture() : string { return $this->picture; }
 	public function setPicture($p) : void { $this->picture = $p; }
-	public function getUser() : User { return $this->author; }
-	public function setUser($u) : void { $this->author = $u; }
+	public function getAuthor() : User { return $this->author; }
+	public function setAuthor($u) : void { $this->author = $u; }
 
 }

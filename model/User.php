@@ -21,11 +21,11 @@ class User {
 
 	public function getId() : int { return $this->id; }
 	public function setId($i) : void { $this->id = $i; }
-	public function getName() : int { return $this->name; }
+	public function getName() : string { return $this->name; }
 	public function setName($n) : void { $this->name = $n; }
-	public function getMail() : int { return $this->mail; }
+	public function getMail() : string { return $this->mail; }
 	public function setMail($m) : void { $this->mail = $m; }
-	public function getPassword() : int { return $this->password; }
+	public function getPassword() : string { return $this->password; }
 	public function setPassword($p) : void { $this->password = $p; }
 
 }
